@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+     <!-- Kết nối js -->
+     <script src="../JS/InsideBaiHoc-Test.js" defer></script>
+     <!-- Bootstraps -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- kết nối css -->
+     <link rel="stylesheet" href="../CSS/InsideBaiHoc-Test.css">
+     <!-- Link font gg -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Link boxicons -->
+        <!-- Basic Icons -->
+        <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
+        <!-- Filled Icons -->
+        <link href="https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css" rel="stylesheet">
+        <!-- Brand Icons -->
+         <link href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css" rel="stylesheet">
+</head>
+<body>
+     <header>
+        <nav class="navbar">
+            <div class="container-fluid d-flex align-items-center"> 
+                <!-- Logo (trái) -->
+                <a href="Trangchu.html">
+                    <img src="../imgs/Logo/Logo ngang.png" alt="" class="Logo-Navbar">
+                </a>
+                <!-- Menu giữa -->
+                <div class="navbar-nav d-none d-lg-flex" id="Middle-navbar">
+                    <ul class="navbar-nav flex-row gap-1" id="Item">
+                        <li class="nav-item">
+                            <a href="Trangchu.html" class="btn">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="BaiHoc.html" class="btn">Bài Học</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="trợgiúp.html" class="btn">Trợ Giúp</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="Vechungtoi.html" class="btn">Về chúng tôi</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Đăng ký / Đăng nhập (phải) -->
+                <div id="guest" class="d-none d-lg-block flex-shrink-0">
+                    <ul class="navbar-nav flex-row gap-1" id="btn-login">
+                        <li class="nav-item">
+                            <a href="../html/Register.html" class="btn" id="Register">Đăng ký</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../html/Login.html" class="btn" id="Login">Đăng nhập</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Avatar (ẩn mặc định) -->
+                <a href="Account.html" id="account" class="d-none align-items-center gap-2 text-decoration-none text-dark ms-2">
+                    <img id="UserAvatar" src="../imgs/avatar-mac-dinh-1.jpg" alt="Avatar"
+                        class="rounded-circle border object-fit-cover" style="width: 50px;">
+                    <span id="UserNameAccount" class="fw-bold"></span>
+                </a>
+                <button class="d-lg-none btn border-0 p-1 ms-2" id="hamburgerBtn"
+                    onclick="toggleMobileMenu()" aria-label="Mở menu">
+                    <span id="hamburgerIcon" style="font-size:26px;color:var(--text-color);line-height:1;">&#9776;</span>
+                </button>
+            </div>
+            <!-- Mobile dropdown -->
+    <div id="mobileMenu" style="display:none; position:absolute; top:100%; left:0; right:0;
+     background:#fff; border-top:1px solid #e0e0e0;
+     box-shadow:0 6px 20px rgba(0,0,0,0.12); z-index:9999; padding:12px 16px 16px;">
+    <ul class="list-unstyled mb-3" style="border-bottom:1px solid #eee; padding-bottom:12px;">
+        <li><a href="Trangchu.html" class="d-block py-2 px-2" style="color:var(--text-color);font-weight:500;">Trang chủ</a></li>
+        <li><a href="BaiHoc.html" class="d-block py-2 px-2" style="color:var(--text-color);font-weight:500;">Bài Học</a></li>
+        <li><a href="trợgiúp.html" class="d-block py-2 px-2" style="color:var(--text-color);font-weight:500;">Trợ Giúp</a></li>
+        <li><a href="Vechungtoi.html" class="d-block py-2 px-2" style="color:var(--text-color);font-weight:500;">Về chúng tôi</a></li>
+    </ul>
+    <div id="guestMobile" class="d-flex flex-column gap-2">
+        <a href="../html/Register.html" class="btn w-100 text-white fw-semibold"
+           style="background:var(--text-color);">Đăng ký</a>
+        <a href="../html/Login.html" class="btn w-100 fw-semibold"
+           style="border:1.5px solid var(--text-color);color:var(--text-color);">Đăng nhập</a>
+    </div>
+    <div id="accountMobile" class="d-none align-items-center gap-2 mt-2">
+        <img src="../imgs/avatar-mac-dinh-1.jpg" class="rounded-circle border" style="width:38px;height:38px;object-fit:cover;">
+        <span id="UserNameMobile" class="fw-bold" style="color:var(--text-color);"></span>
+    </div>
+</div>
+        </nav>
+    </header>
+     <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('hamburgerIcon');
+            const open = menu.style.display !== 'none' && menu.style.display !== '';
+            menu.style.display = open ? 'none' : 'block';
+            icon.innerHTML = open ? '&#9776;' : '&#10005;';
+        }
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('hamburgerBtn');
+            if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
+                menu.style.display = 'none';
+                document.getElementById('hamburgerIcon').innerHTML = '&#9776;';
+            }
+        });
+    </script>
+    <main style="background-color: #e5e5e5;">
+        <div class="banner">
+            <div class="slogan">Ngôn ngữ của ánh nhìn, kết nối của trái tim.</div>
+        </div>
+        <div class="page-wrapper">
+            <div class="content-row">
+
+                <!-- TRÁI: Video + Đáp án -->
+                <div class="quiz-card">
+                    <div class="video-box">
+                        <iframe id="mainVideo" src="" width="100%" height="100%"
+                            allow="autoplay" allowfullscreen style="border:none; border-radius:8px;">
+                        </iframe>
+                    </div>
+
+                    <div class="answers" id="answers"></div>
+
+                    <div class="d-flex justify-content-end mt-3">
+                        <button class="btn-next" onclick="nextCau()">Câu kế tiếp</button>
+                    </div>
+                </div>
+                <div class="sidebar">
+                    <div class="sidebar-title" id="chuDeTitle">CHỦ ĐỀ</div>
+                    <div class="sidebar-sub" id="chuDeSub">TÊN CHỦ ĐỀ</div>
+                    <div class="cau-list" id="cauList"></div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-back-wrapper">
+            <a href="InsideBaiHoc.html" class="btn-back" id="btnBack">← QUAY LẠI</a>
+        </div>
+    </main>
+    <div class="modal fade" id="doneModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-4" style="border-radius:16px;">
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
+                <h5 class="fw-bold mt-2" style="color:#005f69;">THÔNG BÁO</h5>
+                <p class="text-muted my-3" id="doneMessage"></p>
+                <div class="d-flex justify-content-end">
+                    <button class="btn fw-semibold px-4" style="background-color:#fce49c;"
+                        data-bs-dismiss="modal" onclick="quayLai()">Trở lại</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Điều hướng -->
+                <div class="col" id="DieuHuong">
+                    <h4>Điều hướng</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="Trangchu.html"><i class="bx bx-home"></i> Trang chủ</a></li>
+                        <li><a href="BaiHoc.html"><i class="bx bx-video" ></i> Bài học</a></li>
+                        <li><a href="Vechungtoi.html"><i class="bx bx-info-circle"></i> Về chúng tôi</a></li>
+                        <li><a href="trợgiúp.html"><i class="bx bx-help-circle"></i> Trợ giúp</a></li>
+                    </ul>
+                </div>
+                <!-- Liên hệ -->
+                <div class="col text-center" id="LienHe">
+                    <h4>Liên hệ với chúng tôi</h4>
+                    <div class="d-flex justify-content-center gap-5 mt-5">
+                        <a href="#"><img src="../imgs/Instagram.jpg" width="40" alt="Instagram"></a>
+                        <a href="#"><img src="../imgs/Messenger.jpg" width="40" alt="Messenger"></a>
+                        <a href="#"><img src="../imgs/Github.jpg" width="40" alt="Github"></a>
+                    </div>
+                </div>
+                <!-- Logo & slogan -->
+                <div class="col text-center ps-5">
+                    <img src="../imgs/Logo/Logo dọc.png" alt="LogoDoc" height="110">
+                    <p class="mt-2" id="Slogan">Ngôn ngữ của ánh nhìn,<br>kết nối của trái tim.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

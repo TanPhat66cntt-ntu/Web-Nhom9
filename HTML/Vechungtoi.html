@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Về Chúng Tôi — SignLearn VN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- Link font gg -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Link boxicons -->
+        <!-- Basic Icons -->
+        <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
+        <!-- Filled Icons -->
+        <link href="https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css" rel="stylesheet">
+        <!-- Brand Icons -->
+         <link href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css" rel="stylesheet">
+         <script src="../JS/Trangchu.js" defer></script>
+  <link rel="stylesheet" href="../CSS/Vechungtoi.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar custom-nav" style="position:relative;">
+            <div class="container-fluid d-flex align-items-center justify-content-between">
+                <!-- Logo (trái) -->
+                <a href="Trangchu.html" class="flex-shrink-0">
+                    <img src="../imgs/Logo/Logo ngang.png" alt="Logo" class="Logo-Navbar">
+                </a>
+                <!-- Menu giữa (desktop) -->
+                <div class="navbar-nav d-none d-lg-flex" id="Middle-navbar">
+                    <ul class="navbar-nav flex-row gap-1" id="Item">
+                        <li class="nav-item"><a href="Trangchu.html" class="btn">Trang chủ</a></li>
+                        <li class="nav-item"><a href="BaiHoc.html" class="btn">Bài Học</a></li>
+                        <li class="nav-item"><a href="trợgiúp.html" class="btn">Trợ Giúp</a></li>
+                        <li class="nav-item"><a href="Vechungtoi.html" class="btn">Về chúng tôi</a></li>
+                    </ul>
+                </div>
+                <!-- Đăng ký / Đăng nhập (desktop) -->
+                <div id="guest" class="d-none d-lg-block flex-shrink-0">
+                    <ul class="navbar-nav flex-row gap-1" id="btn-login">
+                        <li class="nav-item"><a href="../html/Register.html" class="btn" id="Register">Đăng ký</a></li>
+                        <li class="nav-item"><a href="../html/Login.html" class="btn" id="Login">Đăng nhập</a></li>
+                    </ul>
+                </div>
+                <!-- Avatar desktop -->
+                <a href="Account.html" id="account" class="d-none align-items-center gap-2 text-decoration-none text-dark ms-2 flex-shrink-0">
+                    <img id="UserAvatar" src="../imgs/avatar-mac-dinh-1.jpg" alt="Avatar"
+                        class="rounded-circle border object-fit-cover" style="width:44px;">
+                    <span id="UserNameAccount" class="fw-bold d-none d-lg-inline"></span>
+                </a>
+                <!-- Hamburger button (mobile) -->
+                <button class="d-lg-none btn border-0 p-1 ms-2" id="hamburgerBtn"
+                        onclick="toggleMobileMenu()" aria-label="Mở menu">
+                    <span id="hamburgerIcon" style="font-size:26px;color:var(--text-color);line-height:1;">&#9776;</span>
+                </button>
+            </div>
+            <!-- Mobile dropdown -->
+            <div id="mobileMenu" style="display:none; position:absolute; top:100%; left:0; right:0;
+                 background:#fff; border-top:1px solid #e0e0e0;
+                 box-shadow:0 6px 20px rgba(0,0,0,0.12); z-index:9999; padding:12px 16px 16px;">
+                <ul class="list-unstyled mb-3" style="border-bottom:1px solid #eee; padding-bottom:12px; margin-bottom:12px;">
+                    <li><a href="Trangchu.html" class="d-block py-2 px-2 rounded" style="color:var(--text-color);font-weight:500;">Trang chủ</a></li>
+                    <li><a href="BaiHoc.html" class="d-block py-2 px-2 rounded" style="color:var(--text-color);font-weight:500;">Bài Học</a></li>
+                    <li><a href="trợgiúp.html" class="d-block py-2 px-2 rounded" style="color:var(--text-color);font-weight:500;">Trợ Giúp</a></li>
+                    <li><a href="Vechungtoi.html" class="d-block py-2 px-2 rounded" style="color:var(--text-color);font-weight:500;">Về chúng tôi</a></li>
+                </ul>
+                <div id="guestMobile" class="d-flex flex-column gap-2">
+                    <a href="../html/Register.html" class="btn w-100 text-white fw-semibold"
+                       style="background:var(--text-color);border-radius:8px;">Đăng ký</a>
+                    <a href="../html/Login.html" class="btn w-100 fw-semibold"
+                       style="border:1.5px solid var(--text-color);color:var(--text-color);border-radius:8px;">Đăng nhập</a>
+                </div>
+                <div id="accountMobile" class="d-none align-items-center gap-2 mt-2">
+                    <img id="UserAvatarMobile" src="../imgs/avatar-mac-dinh-1.jpg" alt="Avatar"
+                         class="rounded-circle border" style="width:38px;height:38px;object-fit:cover;">
+                    <span id="UserNameMobile" class="fw-bold" style="color:var(--text-color);"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End Header -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('hamburgerIcon');
+            const open = menu.style.display !== 'none' && menu.style.display !== '';
+            menu.style.display = open ? 'none' : 'block';
+            icon.innerHTML = open ? '&#9776;' : '&#10005;';
+        }
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('hamburgerBtn');
+            if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
+                menu.style.display = 'none';
+                document.getElementById('hamburgerIcon').innerHTML = '&#9776;';
+            }
+        });
+    </script>
+  <!-- NAV -->
+  <!-- HERO -->
+  <div class="hero mt-3">
+    <div class="hero-badge"><i class="ti ti-users"></i> Về chúng tôi</div>
+    <h1>Câu Chuyện Của Chúng Tôi</h1>
+    <p>Nền tảng học Ngôn Ngữ Ký Hiệu Việt Nam — kết nối cộng đồng, xoá bỏ rào cản</p>
+  </div>
+
+  <!-- MAIN -->
+  <main class="main ">
+    <div class="layout">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <p class="sidebar-title">Khám phá</p>
+        <button class="menu-btn active" onclick="showPanel('gioi-thieu', this)">
+          <i class="ti ti-info-circle"></i> Giới thiệu
+        </button>
+        <button class="menu-btn" onclick="showPanel('su-menh', this)">
+          <i class="ti ti-target"></i> Sứ mệnh
+        </button>
+        <button class="menu-btn" onclick="showPanel('doi-ngu', this)">
+          <i class="ti ti-users"></i> Đội ngũ
+        </button>
+        <button class="menu-btn" onclick="showPanel('lien-he', this)">
+          <i class="ti ti-mail"></i> Liên hệ
+        </button>
+      </aside>
+
+      <!-- CONTENT BOX -->
+      <div class="content-box">
+
+        <!-- PANEL: GIỚI THIỆU -->
+        <div class="panel active" id="panel-gioi-thieu">
+          <div class="panel-header">
+            <h2>Giới Thiệu</h2>
+            <p>Chúng tôi là ai?</p>
+          </div>
+          <div class="panel-body">
+            <div class="stats">
+              <div class="stat-card">
+                <span class="num">5.000+</span>
+                <span class="lbl">Học viên</span>
+              </div>
+              <div class="stat-card">
+                <span class="num">120+</span>
+                <span class="lbl">Bài học</span>
+              </div>
+              <div class="stat-card">
+                <span class="num">3 năm</span>
+                <span class="lbl">Hoạt động</span>
+              </div>
+            </div>
+            <p>
+              <strong style="color:var(--green-600)">SignLearn VN</strong> là nền tảng học trực tuyến đầu tiên tại Việt Nam chuyên về
+              <strong style="color:var(--green-600)">Ngôn Ngữ Ký Hiệu Việt Nam (NNKH)</strong>. Chúng tôi được thành lập năm 2022 bởi
+              một nhóm tình nguyện viên đam mê giáo dục hoà nhập, với mong muốn giúp mọi người
+              giao tiếp hiệu quả hơn với cộng đồng người khiếm thính.
+            </p>
+            <p>
+              Các bài học được thiết kế khoa học, trực quan với video minh hoạ rõ ràng, phù hợp
+              cho cả người mới bắt đầu lẫn người muốn nâng cao kỹ năng. Tất cả nội dung đều
+              hoàn toàn <strong style="color:var(--green-600)">miễn phí</strong>.
+            </p>
+            <div class="highlight">
+              <p>💚 Đến nay, SignLearn VN đã giúp hơn 5.000 học viên trên toàn quốc tiếp cận Ngôn Ngữ Ký Hiệu một cách dễ dàng và thú vị.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL: SỨ MỆNH -->
+        <div class="panel" id="panel-su-menh">
+          <div class="panel-header">
+            <h2>Sứ Mệnh</h2>
+            <p>Chúng tôi hướng đến điều gì?</p>
+          </div>
+          <div class="panel-body">
+            <p>
+              Chúng tôi tin rằng ngôn ngữ là cầu nối giữa con người. Sứ mệnh của SignLearn VN là
+              <strong style="color:var(--green-600)">xoá bỏ rào cản giao tiếp</strong> giữa người nghe và người khiếm thính
+              thông qua giáo dục miễn phí, chất lượng cao và dễ tiếp cận.
+            </p>
+            <p>
+              Chúng tôi hợp tác chặt chẽ với các chuyên gia NNKH, giáo viên trường chuyên biệt
+              và chính cộng đồng người khiếm thính để đảm bảo nội dung chính xác, cập nhật và
+              phản ánh đúng văn hoá cộng đồng.
+            </p>
+            <div class="highlight">
+              <p>🎯 Mục tiêu đến năm 2026: Đạt 20.000 học viên và mở rộng nội dung bao phủ đầy đủ 63 tỉnh thành Việt Nam.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL: ĐỘI NGŨ -->
+        <div class="panel" id="panel-doi-ngu">
+          <div class="panel-header">
+            <h2>Đội Ngũ</h2>
+            <p>Những người đứng sau SignLearn VN</p>
+          </div>
+          <div class="panel-body">
+            <p>Chúng tôi là một đội ngũ nhỏ nhưng đầy nhiệt huyết, từ giáo viên, lập trình viên đến nhà thiết kế — tất cả cùng chung một mục tiêu.</p>
+            <div class="team-grid">
+              <div class="member-card">
+                <div class="avatar">PH</div>
+                <div>
+                  <span class="member-name">Lê Anh Phúc Hậu</span>
+                  <span class="member-role">Người sáng lập & Chuyên gia NNKH</span>
+                </div>
+              </div>
+              <div class="member-card">
+                <div class="avatar">TP</div>
+                <div>
+                  <span class="member-name">Nguyễn Tấn Phát</span>
+                  <span class="member-role">Trưởng nhóm Kỹ thuật</span>
+                </div>
+              </div>
+              <div class="member-card">
+                <div class="avatar">ĐT</div>
+                <div>
+                  <span class="member-name">Nguyễn Đức Tuấn</span>
+                  <span class="member-role">Nhà thiết kế nội dung</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL: LIÊN HỆ -->
+        <div class="panel" id="panel-lien-he">
+          <div class="panel-header">
+            <h2>Liên Hệ</h2>
+            <p>Gửi tin nhắn cho chúng tôi</p>
+          </div>
+          <div class="panel-body">
+            <p>Có câu hỏi, góp ý hoặc muốn hợp tác? Điền vào form dưới đây — chúng tôi sẽ phản hồi trong vòng 24 giờ làm việc.</p>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">Họ và tên</label>
+                <input type="text" id="fname" placeholder="Nguyễn Văn A" />
+              </div>
+              <div class="form-group">
+                <label for="femail">Email</label>
+                <input type="email" id="femail" placeholder="email@example.com" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="fsubject">Chủ đề</label>
+              <select id="fsubject">
+                <option value="">— Chọn chủ đề —</option>
+                <option>Góp ý về nội dung</option>
+                <option>Hợp tác & Tài trợ</option>
+                <option>Báo lỗi kỹ thuật</option>
+                <option>Khác</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="fmessage">Nội dung</label>
+              <textarea id="fmessage" placeholder="Nhập nội dung tin nhắn của bạn..."></textarea>
+            </div>
+            <button class="submit-btn" onclick="submitForm()">
+              <i class="ti ti-send"></i> Gửi tin nhắn
+            </button>
+            <div class="success-msg" id="successMsg">
+              <i class="ti ti-circle-check" style="font-size:18px;color:var(--green-400)"></i>
+              Cảm ơn bạn! Chúng tôi sẽ phản hồi sớm nhất có thể.
+            </div>
+          </div>
+        </div>
+
+      </div><!-- .content-box -->
+    </div><!-- .layout -->
+  </main>
+
+  <!-- FOOTER -->
+    <footer class="py-4">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Điều hướng -->
+                <div class="col" id="DieuHuong">
+                    <h4>Điều hướng</h4>
+                    <ul class="list-unstyled fs-6">
+                        <li><a href="Trangchu.html"><i class="bx bx-home"></i>Trang chủ</a></li>
+                        <li><a href="BaiHoc.html"><i class="bx bx-video" ></i>Bài học</a></li>
+                        <li><a href="Vechungtoi.html"><i class="bx bx-info-circle"></i>Về chúng tôi</a></li>
+                        <li><a href="trợgiúp.html"><i class="bx bx-help-circle"></i>Trợ giúp</a></li>
+                    </ul>
+                </div>
+                <!-- Liên hệ -->
+                <div class="col text-center" id="LienHe">
+                    <h4>Liên hệ với chúng tôi</h4>
+                    <div class="d-flex justify-content-center gap-5 mt-5">
+                        <a href="#"><img src="../imgs/Instagram.jpg" width="40" alt="Instagram"></a>
+                        <a href="#"><img src="../imgs/Messenger.jpg" width="40" alt="Messenger"></a>
+                        <a href="#"><img src="../imgs/Github.jpg" width="40" alt="Github"></a>
+                    </div>
+                </div>
+                <!-- Logo & slogan -->
+                <div class="col text-center ps-5">
+                    <img src="../imgs/Logo/Logo dọc.png" alt="LogoDoc" height="110">
+                    <p class="mt-2 fw-bold fs-6" id="Slogan">Ngôn ngữ của ánh nhìn,<br>kết nối của trái tim.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+  <!-- phần JavaScript -->
+  <script>
+    function showPanel(id, btn) {
+      // Hide all panels
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      // Deactivate all buttons
+      document.querySelectorAll('.menu-btn').forEach(b => b.classList.remove('active'));
+      // Show target panel & activate button
+      document.getElementById('panel-' + id).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    function submitForm() {
+      const name = document.getElementById('fname').value.trim();
+      const email = document.getElementById('femail').value.trim();
+      const message = document.getElementById('fmessage').value.trim();
+
+      if (!name || !email || !message) {
+        alert('Vui lòng điền đầy đủ họ tên, email và nội dung.');
+        return;
+      }
+
+      // Show success message
+      document.getElementById('successMsg').classList.add('show');
+      // Clear form
+      document.getElementById('fname').value = '';
+      document.getElementById('femail').value = '';
+      document.getElementById('fsubject').value = '';
+      document.getElementById('fmessage').value = '';
+
+      setTimeout(() => {
+        document.getElementById('successMsg').classList.remove('show');
+      }, 5000);
+    }
+  </script>
+
+</body>
+</html>

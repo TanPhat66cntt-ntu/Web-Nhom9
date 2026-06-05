@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Học</title>
+     <!-- Kết nối js -->
+     <script src="../JS/BaiHoc.js" defer></script>
+     <!-- Bootstraps -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- kết nối css -->
+     <link rel="stylesheet" href="../CSS/BaiHoc.css">
+
+     <!-- Link font gg -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Link boxicons -->
+        <!-- Basic Icons -->
+        <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
+        <!-- Filled Icons -->
+        <link href="https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css" rel="stylesheet">
+        <!-- Brand Icons -->
+         <link href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css" rel="stylesheet">
+</head>
+<body>
+        <!-- Header -->
+    <header>
+        <nav class="navbar  custom-nav" style="position:relative;">
+            <div class="container-fluid d-flex align-items-center justify-content-between">
+                <!-- Logo (trái) -->
+                <a href="Trangchu.html" class="flex-shrink-0">
+                    <img src="../imgs/Logo/Logo ngang.png" alt="Logo" class="Logo-Navbar">
+                </a>
+                <!-- Menu giữa (desktop) -->
+                <div class="navbar-nav d-none d-lg-flex" id="Middle-navbar">
+                    <ul class="navbar-nav flex-row gap-1" id="Item">
+                        <li class="nav-item"><a href="Trangchu.html" class="btn">Trang chủ</a></li>
+                        <li class="nav-item"><a href="BaiHoc.html" class="btn">Bài Học</a></li>
+                        <li class="nav-item"><a href="trợgiúp.html" class="btn">Trợ Giúp</a></li>
+                        <li class="nav-item"><a href="Vechungtoi.html" class="btn">Về chúng tôi</a></li>
+                    </ul>
+                </div>
+                <!-- Đăng ký / Đăng nhập (desktop) -->
+                <div id="guest" class="d-none d-lg-block flex-shrink-0">
+                    <ul class="navbar-nav flex-row gap-1" id="btn-login">
+                        <li class="nav-item"><a href="../html/Register.html" class="btn" id="Register">Đăng ký</a></li>
+                        <li class="nav-item"><a href="../html/Login.html" class="btn" id="Login">Đăng nhập</a></li>
+                    </ul>
+                </div>
+                <!-- Avatar desktop -->
+                <a href="Account.html" id="account" class="d-none align-items-center gap-2 text-decoration-none text-dark ms-2 flex-shrink-0">
+                    <img id="UserAvatar" src="../imgs/avatar-mac-dinh-1.jpg" alt="Avatar"
+                        class="rounded-circle border object-fit-cover" style="width:44px;">
+                    <span id="UserNameAccount" class="fw-bold d-none d-lg-inline"></span>
+                </a>
+                <!-- Hamburger button (mobile) -->
+                <button class="d-lg-none btn border-0 p-1 ms-2" id="hamburgerBtn"
+                        onclick="toggleMobileMenu()" aria-label="Mở menu">
+                    <span id="hamburgerIcon" style="font-size:26px;color:var(--text-color);line-height:1;">&#9776;</span>
+                </button>
+            </div>
+            <!-- Mobile dropdown -->
+            <div id="mobileMenu" style="display:none; position:absolute; top:100%; left:0; right:0;
+                 background:#fff; border-top:1px solid #e0e0e0;
+                 box-shadow:0 6px 20px rgba(0,0,0,0.12); z-index:9999; padding:12px 16px 16px;">
+                <ul class="list-unstyled mb-3" style="border-bottom:1px solid #eee; padding-bottom:12px; margin-bottom:12px;">
+                    <li><a href="Trangchu.html" class="d-block py-2 px-2 rounded" style="color:var(--text-color);font-weight:500;">Trang chủ</a></li>
+                    <li><a href="BaiHoc.html" class="d-block py-2 px-2 rounded" style="color:var(--text-color);font-weight:500;">Bài Học</a></li>
+                    <li><a href="trợgiúp.html" class="d-block py-2 px-2 rounded" style="color:var(--text-color);font-weight:500;">Trợ Giúp</a></li>
+                    <li><a href="Vechungtoi.html" class="d-block py-2 px-2 rounded" style="color:var(--text-color);font-weight:500;">Về chúng tôi</a></li>
+                </ul>
+                <div id="guestMobile" class="d-flex flex-column gap-2">
+                    <a href="../html/Register.html" class="btn w-100 text-white fw-semibold"
+                       style="background:var(--text-color);border-radius:8px;">Đăng ký</a>
+                    <a href="../html/Login.html" class="btn w-100 fw-semibold"
+                       style="border:1.5px solid var(--text-color);color:var(--text-color);border-radius:8px;">Đăng nhập</a>
+                </div>
+                <div id="accountMobile" class="d-none align-items-center gap-2 mt-2">
+                    <img id="UserAvatarMobile" src="../imgs/avatar-mac-dinh-1.jpg" alt="Avatar"
+                         class="rounded-circle border" style="width:38px;height:38px;object-fit:cover;">
+                    <span id="UserNameMobile" class="fw-bold" style="color:var(--text-color);"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End Header -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('hamburgerIcon');
+            const open = menu.style.display !== 'none' && menu.style.display !== '';
+            menu.style.display = open ? 'none' : 'block';
+            icon.innerHTML = open ? '&#9776;' : '&#10005;';
+        }
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('hamburgerBtn');
+            if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
+                menu.style.display = 'none';
+                document.getElementById('hamburgerIcon').innerHTML = '&#9776;';
+            }
+        });
+    </script>
+    <main style="background-color: #e5e5e5;">
+        <div class="banner">
+            <div class="slogan">Ngôn ngữ của ánh nhìn, kết nối của trái tim.</div>
+        </div>
+        <div class="main-content">
+        <h2 class="section-title">CÁC CHỦ ĐỀ CỦA BẠN</h2>
+
+        <!-- Tabs -->
+        <div class="topic-tabs">
+            <button class="topic-tab badge-green active" onclick="filterTopics('coban', this)">Cơ bản</button>
+            <button class="topic-tab badge-yellow" onclick="filterTopics('yte', this)">Y tế</button>
+            <button class="topic-tab badge-orange" onclick="filterTopics('luat', this)">Luật</button>
+        </div>
+
+        <!-- Grid -->
+        <div class="topics-grid" id="topicsGrid">
+            <a href="InsideBaiHoc.html?id=1" class="topic-card" data-cat="coban">
+                <img src="../imgs/Chào hỏi_1.jpg" alt="Chào hỏi" class="topic-card-img">
+                <div class="topic-card-body">
+                    <div class="topic-card-title">Chủ đề 1</div>
+                    <div class="topic-card-sub">Chào hỏi</div>
+                </div>
+            </a>
+
+            <a href="InsideBaiHoc.html?id=2" class="topic-card" data-cat="coban">
+                <img src="../imgs/Bảng chữ cái.png" alt="Bảng chữ cái" class="topic-card-img">
+                <div class="topic-card-body">
+                    <div class="topic-card-title">Chủ đề 2</div>
+                    <div class="topic-card-sub">Chữ cái</div>
+                </div>
+            </a>
+
+            <a href="InsideBaiHoc.html?id=3" class="topic-card" data-cat="coban">
+                <img src="../imgs/Gia đình.png" alt="Bảng chữ cái" class="topic-card-img">
+                <div class="topic-card-body">
+                    <div class="topic-card-title">Chủ đề 3</div>
+                    <div class="topic-card-sub">Gia đình</div>
+                </div>
+            </a>
+
+            <a href="InsideBaiHoc.html?id=4" class="topic-card" data-cat="coban">
+                <img src="../imgs/Bảng biểu cảm.png" alt="Bảng chữ cái" class="topic-card-img">
+                <div class="topic-card-body">
+                    <div class="topic-card-title">Chủ đề 4</div>
+                    <div class="topic-card-sub">Biểu cảm</div>
+                </div>
+            </a>
+
+            <a href="InsideBaiHoc.html?id=5" class="topic-card" data-cat="coban">
+                <img src="../imgs/Thực phẩm.png" alt="Bảng chữ cái" class="topic-card-img">
+                <div class="topic-card-body">
+                    <div class="topic-card-title">Chủ đề 5</div>
+                    <div class="topic-card-sub">Thực phẩm</div>
+                </div>
+            </a>
+
+            <a href="InsideBaiHoc.html?id=6" class="topic-card" data-cat="coban">
+                <img src="../imgs/Bảng con số.png" alt="Bảng chữ cái" class="topic-card-img">
+                <div class="topic-card-body">
+                    <div class="topic-card-title">Chủ đề 6</div>
+                    <div class="topic-card-sub">Con số</div>
+                </div>
+            </a>
+        </div>
+    </div>
+    </main>
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Điều hướng -->
+                <div class="col" id="DieuHuong">
+                    <h4>Điều hướng</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="Trangchu.html"><i class="bx bx-home"></i> Trang chủ</a></li>
+                        <li><a href="BaiHoc.html"><i class="bx bx-video" ></i> Bài học</a></li>
+                        <li><a href="Vechungtoi.html"><i class="bx bx-info-circle"></i> Về chúng tôi</a></li>
+                        <li><a href="trợgiúp.html"><i class="bx bx-help-circle"></i> Trợ giúp</a></li>
+                    </ul>
+                </div>
+                <!-- Liên hệ -->
+                <div class="col text-center" id="LienHe">
+                    <h4>Liên hệ với chúng tôi</h4>
+                    <div class="d-flex justify-content-center gap-5 mt-5">
+                        <a href="#"><img src="../imgs/Instagram.jpg" width="40" alt="Instagram"></a>
+                        <a href="#"><img src="../imgs/Messenger.jpg" width="40" alt="Messenger"></a>
+                        <a href="#"><img src="../imgs/Github.jpg" width="40" alt="Github"></a>
+                    </div>
+                </div>
+                <!-- Logo & slogan -->
+                <div class="col text-center ps-5">
+                    <img src="../imgs/Logo/Logo dọc.png" alt="LogoDoc" height="110">
+                    <p class="mt-2" id="Slogan">Ngôn ngữ của ánh nhìn,<br>kết nối của trái tim.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
